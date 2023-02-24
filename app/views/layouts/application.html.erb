@@ -16,12 +16,6 @@
       <%= link_to "List index", lists_path, class: "m-3 btn btn-outline-dark" %>
     </nav>
 
-    <div class="banner">
-      <h1 style="text-align:center; font-size: 60px; padding-top: 260px;"> <strong>Your Watch list</strong></h1>
-    </div>
-
-    <div class="container mt-5">
-      <%= yield %>
-    </div>
+    <%= yield %>
   </body>
 </html>

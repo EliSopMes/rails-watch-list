@@ -1,5 +1,6 @@
 require 'json'
 require 'rest-client'
+require 'faker'
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -15,7 +16,6 @@ require 'rest-client'
 Bookmark.destroy_all
 Movie.destroy_all
 
-
 response = RestClient.get 'https://tmdb.lewagon.com/movie/top_rated'
 repos = JSON.parse(response)
 
@@ -27,4 +27,4 @@ repos['results'].first(20).each do |item|
     rating: item['vote_average']
   )
   movie.save!
-end 
+end

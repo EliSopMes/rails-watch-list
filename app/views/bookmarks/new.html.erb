@@ -1,7 +1,15 @@
-<h1>New bookmark</h1>
+<div class="banner", style="height:300px; background-image: url(<%= image_path('popcorn.jpg') %>); background-size: cover; background-position: center;">
+  <h1 style="text-align:center; font-size: 60px; color: white; padding-top: 140px;"> <strong>New bookmark</strong></h1>
+</div>
+
+<div class="container">
 <br>
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.association :movie %>
-  <%= f.text_field :comment %>
-  <%= f.submit "Add bookmark", class: "btn btn-primary" %>
-<% end %>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.association :movie %>
+    <%= f.label :comment %>
+    <%= f.text_field :comment, style:"width: 1210px;" %>
+    <br>
+    <br>
+    <%= f.submit "Add bookmark", class: "btn btn-primary" %>
+  <% end %>
+</div>

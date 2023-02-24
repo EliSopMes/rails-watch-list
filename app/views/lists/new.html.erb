@@ -1,14 +1,19 @@
-<h2 style="font-size:40px;">New list</h2>
+<div class="banner", style="height:300px; background-image: url(<%= cl_image_path @list.photo.key%>); background-size: cover; background-position: center;">
+  <h1 style="text-align:center; font-size: 60px; color: white; padding-top: 140px;"> <strong>New list %></strong></h1>
+</div>
+<%= link_to "Add movie", new_list_bookmark_path(@list), class:"btn btn-dark mb-4 mt-3" %>
 
-<%= form_with model: @list do |f| %>
-  <%= f.label :name, style:"font-size:30px;" %>
-  <%= f.text_field :name, style:"width:400px;" %>
-  <br>
-  <%= f.label :image, style:"font-size:30px;" %>
-  <%= f.text_field :photo, as: :file, style:"width:400px;" %>
-  <br>
-  <br>
-  <%= f.submit "Add list", class: "btn btn-dark", style:"width:300px;" %>
-  <br>
-  <br><br>
-<% end %>
+
+<div class="container">
+  <%= simple_form_for(@list) do |f| %>
+    <%= f.label :name, style:"font-size:30px;" %>
+    <%= f.text_field :name, style:"width:400px;" %>
+    <br>
+    <%= f.input :photo, as: :file, style:"width:400px;" %>
+    <br>
+    <br>
+    <%= f.submit "Add list", class: "btn btn-dark", style:"width:300px;" %>
+    <br>
+    <br><br>
+  <% end %>
+</div>

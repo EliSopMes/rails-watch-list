@@ -1,5 +1,8 @@
-<h2 style="font-size: 40px;"> <strong>Your list: <%= @list.name %></strong> <br>
-<%= link_to "Add movie", new_list_bookmark_path(@list), class:"btn btn-dark mb-4 mt-3" %></h2>
+<div class="banner", style="height:300px; background-image: url(<%= cl_image_path @list.photo.key%>); background-size: cover; background-position: center;">
+  <h1 style="text-align:center; font-size: 60px; color: white; padding-top: 140px;"> <strong>Your list: <%= @list.name %></strong></h1>
+</div>
+<%= link_to "Add movie", new_list_bookmark_path(@list), class:"btn btn-dark mb-4 mt-3" %>
+
 
 
 <div class="row mb-5">
