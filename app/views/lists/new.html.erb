@@ -4,8 +4,8 @@
   <%= f.label :name, style:"font-size:30px;" %>
   <%= f.text_field :name, style:"width:400px;" %>
   <br>
-  <%= f.label :Image_URL, style:"font-size:30px;" %>
-  <%= f.text_field :image_url, style:"width:400px;" %>
+  <%= f.label :image, style:"font-size:30px;" %>
+  <%= f.text_field :photo, as: :file, style:"width:400px;" %>
   <br>
   <br>
   <%= f.submit "Add list", class: "btn btn-dark", style:"width:300px;" %>
