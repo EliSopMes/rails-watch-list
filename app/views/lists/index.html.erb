@@ -1,18 +1,17 @@
-<h2>All lists</h2>
+<h2 style="font-size: 45px; text-align:center;"> <strong>All lists</strong></h2>
 
-<ul>
+<div class="row mb-5">
   <% @lists.each do |list| %>
-    <li> <%= link_to list.name, list_path(list) %> </li>
+    <div class="col-sm-4">
+      <div class="card mb-4">
+        <%= image_tag list.image_url, alt: "Film", style:"height: 270px;" %>
+        <div class="card-body">
+          <h5 class="card-title"> <strong><%=link_to list.name, list_path(list), style:"color: black; font-size: 25px; text-decoration: none;"%></strong></h5>
+        </div>
+      </div>
+    </div>
   <% end %>
-</ul>
-
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
 </div>
 
-<%= link_to "Create new list", new_list_path %>
+
+<%= link_to "Create new list", new_list_path, class:"btn btn-primary mb-5", style:"width: 400px; font-size: 25px;" %>
